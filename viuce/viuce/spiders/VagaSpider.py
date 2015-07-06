@@ -25,7 +25,7 @@ class VagaSpider(scrapy.Spider):
     'cargo': lambda x: x.xpath('text()')[0].extract().strip(),
     'descricao': lambda x: '\n'.join(t.strip() for t in x.xpath('text()').extract()),
     'salario': lambda x: x.xpath('text()')[0].extract().strip(),
-    'beneficios': lambda x: x.xpath('ul/li/text()').extract(),
+    'beneficios': lambda x: '\n'.join(t.strip() for t in x.xpath('ul/li/text()').extract()),
     'cidade': lambda x: x.xpath('text()')[0].extract().strip()}
 
     def parse(self, response):
@@ -76,4 +76,4 @@ class VagaSpider(scrapy.Spider):
 
                 vaga[attr_name] = attr_value
 
-        print vaga
+        yield vaga
