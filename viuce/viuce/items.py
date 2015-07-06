@@ -7,12 +7,15 @@
 
 import scrapy
 
+def beneficios_serializer(beneficios):
+
+    return '\n'.join(beneficios)
 
 class Vaga(scrapy.Item):
 
     cargo = scrapy.Field()
     descricao = scrapy.Field()
-    beneficios = scrapy.Field()
+    beneficios = scrapy.Field(serializer=beneficios_serializer)
     salario = scrapy.Field()
     cidade = scrapy.Field()
     codigo = scrapy.Field()
