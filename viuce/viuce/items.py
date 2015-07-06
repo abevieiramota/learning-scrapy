@@ -13,3 +13,8 @@ class Vaga(scrapy.Item):
     cargo = scrapy.Field()
     descricao = scrapy.Field()
     beneficios = scrapy.Field()
+    salario = scrapy.Field()
+    cidade = scrapy.Field()
+    codigo = scrapy.Field()
+    data = scrapy.Field()
+    url = scrapy.Field()
