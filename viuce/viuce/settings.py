@@ -14,6 +14,8 @@ BOT_NAME = 'viuce'
 SPIDER_MODULES = ['viuce.spiders']
 NEWSPIDER_MODULE = 'viuce.spiders'
 
+DOWNLOAD_HANDLERS = {'s3': None}
+
 LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

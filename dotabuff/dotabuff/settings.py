@@ -14,6 +14,10 @@ BOT_NAME = 'dotabuff'
 SPIDER_MODULES = ['dotabuff.spiders']
 NEWSPIDER_MODULE = 'dotabuff.spiders'
 
+DOWNLOAD_HANDLERS = {'s3': None}
+
+LOG_LEVEL = 'INFO'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'dotabuff (+http://www.yourdomain.com)'

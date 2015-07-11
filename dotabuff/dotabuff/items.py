@@ -7,8 +7,17 @@
 
 import scrapy
 
+class Hero(scrapy.Item):
 
-class DotabuffItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    level = scrapy.Field()
+    kill = scrapy.Field()
+    death = scrapy.Field()
+    assist = scrapy.Field()
+    items = scrapy.Field()
+
+class MatchItem(scrapy.Item):
+
+    match_id = scrapy.Field()
+    radiant_team = scrapy.Field()
+    dire_team = scrapy.Field()
