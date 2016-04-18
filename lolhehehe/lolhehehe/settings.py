@@ -9,12 +9,16 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
+import os
+
 BOT_NAME = 'lolhehehe'
 
 SPIDER_MODULES = ['lolhehehe.spiders']
 NEWSPIDER_MODULE = 'lolhehehe.spiders'
 
 DOWNLOAD_HANDLERS = {'s3': None}
+
+DOWNLOAD_TIMEOUT = 180
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -64,7 +68,8 @@ CONCURRENT_REQUESTS=32
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {'scrapy.pipelines.files.FilesPipeline': 1, }
-FILES_STORE = 'C:\\Users\\abelardomota\\Documents\\GitHub\\scrapy-lolhehehe-galeriadafama\\lolhehehe'
+CUR_DIR = os.path.dirname(os.path.realpath(__file__))
+FILES_STORE = os.path.join(CUR_DIR, '..', 'images')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
