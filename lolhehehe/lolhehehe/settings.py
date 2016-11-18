@@ -69,7 +69,7 @@ CONCURRENT_REQUESTS=32
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {'scrapy.pipelines.files.FilesPipeline': 1, }
 CUR_DIR = os.path.dirname(os.path.realpath(__file__))
-FILES_STORE = os.path.join(CUR_DIR, '..', 'images')
+FILES_STORE = os.path.join(CUR_DIR, 'images')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

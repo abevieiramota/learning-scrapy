@@ -24,6 +24,7 @@ class LolhehehespiderSpider(scrapy.Spider):
     def parse_galeria(self, response):
 
         img_urls = response.xpath('//p/img/@src').extract()
+        img_urls = [img_url.split('?')[0] for img_url in img_urls]
 
         item = LolheheheItem()
         item['file_urls'] = img_urls
